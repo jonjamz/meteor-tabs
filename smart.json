@@ -1,0 +1,8 @@
+{
+  "name": "tabs",
+  "description": "Easy responsive tabs",
+  "homepage": "https://github.com/andrewreedy/meteor-tabs",
+  "author": "Andrew Reedy",
+  "version": "0.0.1",
+  "git": "https://github.com/andrewreedy/meteor-tabs.git"
+}
