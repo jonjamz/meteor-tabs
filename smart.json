@@ -3,6 +3,6 @@
   "description": "Meteor UI Tabs - Tab navigation component that can render Blaze UI Templates in tabs and optionally works with iron-router.",
   "homepage": "https://github.com/andrewreedy/meteor-tabs",
   "author": "Andrew Reedy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "git": "https://github.com/andrewreedy/meteor-tabs.git"
 }
