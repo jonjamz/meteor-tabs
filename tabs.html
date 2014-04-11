@@ -1,0 +1,12 @@
+<template name="tabs">
+  <div class="{{class}} {{type}} tabs" id="{{id}}">
+    <ul class="tabs-list">
+      {{#each settings.tabs}}
+        <li class="tab-item tab-id-{{path}}" data-path="{{path}}">{{name}}</li>
+      {{/each}}
+    </ul>
+    <div class="tabs-container">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>

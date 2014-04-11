@@ -1,7 +1,6 @@
-Easy Responsive Tabs to Accordion
+Tabs
 =================================
-
-Easy responsive tabs - is a lightweight jQuery plugin which optimizes normal horizontal or vertical tabs to accordion on multi devices like: web, tablets, Mobile (IPad &amp; IPhone). This plugin adapts the screen size and changes its form accordingly.
+Meteor UI Tabs - Blaze UI tab navigation component that allows for simple html tabs or rendered templates per tab with data and routes
 
 Installation
 =========
@@ -9,70 +8,81 @@ Installation
 mrt add tabs
 ```
 
-Features
+Usage
 =========
 
-+ Horizontal / Vertical Tabs to Accordion
-+ Tabs and accordion are created entirely with jQuery
-+ Supports multiple sets of tabs on same page
-+ Cross browser compatibility (IE7+, Chrome, Firefox, Safari and Opera)
-+ Multi device support (Web, Tablets & Mobile)
-+ Link directly to specified tab (works with multiple instances)
-+ Maintains state of tabs when navigating away from page and then returning using back or forward (if browser supports the History API)
+### Template
+```html
+<template name="myapp">
+  {{#tabs id="myapp-tabs" settings=tabSettings}}
 
-Demo
-====
+    <!--  First Tab -->
+    <div></div>
 
-http://webtrendset.com/demo/easy-responsive-tabs/Index.html
+    <!--  Yield Tab Example -->
+    <div>
+      <button class="btn">Button not in rendered template</button>
+      <div class="yield"></div>
+    </div>
 
+    <!--  Simple HTML Tab -->
+    <div>
+      <h1>Hey this is an HTML tab with out a template</h1>
+    </div>
 
-How to use
-==========
+  {{/tabs}}
+</template>
+```
 
-=> Included jQuery file (minimum jQuery-1.5.1.min.js)
-=> Included easyResponsiveTabs.js
-=> Include responsive-tabs.css
+### Controller
+```coffeescript
 
-=> Here is the Markup for Tabs structure:
+Template['myapp'].helpers
 
-        <div id="demoTab">
-            <ul class="resp-tabs-list">
-                <li> .... </li>
-                <li> .... </li>
-                <li> .... </li>
-            </ul>
+  tabSettings: ->
+    defaultPath: @tab || "first"
+    type: 'horizontal'
+    tabs:  [
 
-            <div class="resp-tabs-container">
-                <div> ....... </div>
-                <div> ....... </div>
-                <div> ....... </div>
-            </div>
-        </div>
+      ###
+        First Tab
+      ###
+      path: 'first'
+      name: 'First'
+      template: 'users'
+      data:
+        users: Meteor.users.find().fetch()
+    ,
 
-=> Call the easyResponsiveTabs function:
+      ###
+        Yield Tab
+      ###
+      path: 'yield'
+      name: 'Yield'
+      template: 'other'
+    ,
 
-        $('#demoTab').easyResponsiveTabs();
+      ###
+        HTML Tab
+      ###
+      path: 'html'
+      name: 'HTML'
+      onAfterAction: ->
+        console.log 'html tab rendered'
+    ,
 
-=> With optional parameters:
+```
 
-        $("#demoTab").easyResponsiveTabs({
-            type: 'default', //Types: default, vertical, accordion
-            width: 'auto', //auto or any custom width
-            fit: true,   // 100% fits in a container
-            closed: false, // Close the panels on start, the options 'accordion' and 'tabs' keep them closed in there respective view types
-            activate: function() {}  // Callback function, gets called if tab is switched
-        });
+### Router Example
+```coffeescript
 
-=> Linking to Tabs:
+Router.map ->
 
-        http://yoursite.com/tabs.html#{TAB ID}{TAB NUM}
-        http://yoursite.com/tabs.html#demoTab2
+  @route "myapp",
+    path: "/myapp/:tab?"
+    template: 'myapp'
+    data: ->
+      return
+        tab: @params.tab
 
-        Multiple Instances:
-        http://yoursite.com/tabs.html#{TAB ID 1}{TAB NUM}|{TAB ID 2}{TAB NUM}
-        http://yoursite.com/tabs.html#demoTab2|demoTwo3
-
-For any support
-===============
-Samson
-Email: samson3d@gmail.com
+```

@@ -1,7 +1,9 @@
 Package.describe({
-  summary: "Easy responsive tabs"
+  summary: "Meteor UI Tabs"
 });
 
 Package.on_use(function (api, where) {
-  api.add_files(['Easy-Responsive-Tabs-to-Accordion/js/easyResponsiveTabs.js'], 'client');
+  api.use(['ui',  'underscore', 'deps', 'templating'], 'client');
+  api.use('coffeescript',['client']);
+  api.add_files(['tabs.coffee'], 'client');
 });

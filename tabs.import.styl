@@ -1,0 +1,78 @@
+borderColor = #ddd
+
+div.tabs
+
+  .tab-item
+    font-weight 600
+    font-size 13px
+    display inline-block
+    padding 13px 15px
+    margin 0
+    list-style none
+    cursor pointer
+    float left
+
+    &.active
+      border-radius top 5px
+      border 1px solid borderColor
+      border-bottom none
+      margin-bottom -1px !important
+      padding 12px 14px 14px 14px !important
+      background-color #fff
+
+  .tabs-container
+    padding 0px
+    background-color #fff
+    clear left
+
+    .tab-content
+      display none
+      padding 15px
+      border-top 1px solid borderColor
+
+      &.active
+        display block
+
+  // Vertical Tabs
+  &.vertical
+    ul.tabs-list
+      float left
+      width 30%
+
+      .tab-item
+        display block
+        padding 15px 15px !important
+        margin 0
+        cursor pointer
+        float none
+
+        &.active
+          border 1px solid borderColor
+          border-right none
+          background-color #fff
+          position relative
+          z-index 1
+          margin-right -1px !important
+          padding 14px 15px 15px 14px !important
+
+      .tabs-container
+        padding 0px
+        background-color #fff
+        border 1px solid borderColor
+        float left
+        width 68%
+        min-height 250px
+        border-radius 4px
+        clear none
+
+        .tab-content
+          border none
+
+  .arrow
+    width 0
+    height 0
+    float right
+    margin-top 3px
+    border-left 6px solid transparent
+    border-right 6px solid transparent
+    border-top 12px solid borderColor
