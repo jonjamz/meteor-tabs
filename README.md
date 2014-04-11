@@ -2,7 +2,7 @@ Tabs
 =================================
 Meteor UI Tabs - Blaze UI tab navigation component that allows for simple html tabs or rendered templates per tab with data and routes
 
-!(demo)[http://cl.ly/Uwda/Screenshot%202014-04-11%2004.33.21.png]
+![demo](http://cl.ly/Uwda/Screenshot%202014-04-11%2004.33.21.png)
 
 Installation
 =========
