@@ -75,7 +75,7 @@ do ($ = jQuery, window, document) ->
 
         # Check if there is a data attribute
         if tab.data
-          if _.isFunction tab.data then data = tab.data() else data = tab.data
+          data = if _.isFunction tab.data then tab.data() else tab.data
           renderedTemplate = UI.renderWithData(Template[tab.template], data)
         else
           renderedTemplate = UI.render(Template[tab.template])
