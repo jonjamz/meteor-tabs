@@ -1,0 +1,73 @@
+div.tabs .tab-item {
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+  padding: 13px 15px;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+  float: left;
+}
+div.tabs .tab-item.active {
+  border-radius: top 5px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  margin-bottom: -1px !important;
+  padding: 12px 14px 14px 14px !important;
+  background-color: #fff;
+}
+div.tabs .tabs-container {
+  padding: 0px;
+  background-color: #fff;
+  clear: left;
+}
+div.tabs .tabs-container .tab-content {
+  display: none;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+div.tabs .tabs-container .tab-content.active {
+  display: block;
+}
+div.tabs.vertical ul.tabs-list {
+  float: left;
+  width: 30%;
+}
+div.tabs.vertical ul.tabs-list .tab-item {
+  display: block;
+  padding: 15px 15px !important;
+  margin: 0;
+  cursor: pointer;
+  float: none;
+}
+div.tabs.vertical ul.tabs-list .tab-item.active {
+  border: 1px solid #ddd;
+  border-right: none;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  margin-right: -1px !important;
+  padding: 14px 15px 15px 14px !important;
+}
+div.tabs.vertical ul.tabs-list .tabs-container {
+  padding: 0px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  float: left;
+  width: 68%;
+  min-height: 250px;
+  border-radius: 4px;
+  clear: none;
+}
+div.tabs.vertical ul.tabs-list .tabs-container .tab-content {
+  border: none;
+}
+div.tabs .arrow {
+  width: 0;
+  height: 0;
+  float: right;
+  margin-top: 3px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid #ddd;
+}
