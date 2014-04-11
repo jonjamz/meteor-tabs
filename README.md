@@ -26,13 +26,13 @@ Usage
 
     <!--  Yield Tab Example -->
     <div>
-      <button class="btn">Button not in rendered template</button>
+      <button class="btn">HTML Button in the same tab as a rendered template</button>
       <div class="yield"></div>
     </div>
 
     <!--  Simple HTML Tab -->
     <div>
-      <h1>Hey this is an HTML tab with out a template</h1>
+      <h1>Hey this is an HTML tab without a template</h1>
     </div>
 
   {{/tabs}}
