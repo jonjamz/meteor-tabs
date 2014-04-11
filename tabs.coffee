@@ -34,7 +34,6 @@ do ($ = jQuery, window, document) ->
 
       tab = 0
       $(@element).find(".tab-content").each ->
-        console.log settings.tabs[tab].path
         $(this).addClass "content-id-" + settings.tabs[tab].path
         tab++
 
