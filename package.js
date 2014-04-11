@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Meteor UI Tabs"
+  summary: "Meteor UI Tabs - Tab navigation component that can render Blaze UI Templates in tabs and optionally works with iron-router."
 });
 
 Package.on_use(function (api, where) {
