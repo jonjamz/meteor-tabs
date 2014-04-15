@@ -53,8 +53,13 @@ do ($ = jQuery, window, document) ->
       tab = _.find @settings.tabs, (tab) ->
         tab.path == path
 
+      # Get the current path
+      path = window.location.pathname
+      if path.charAt path.length - 1 != "/"
+        path + "/"
+
       # Update the route
-      history.pushState {}, '', tab.path
+      history.pushState {}, '', path + tab.path
 
       # Remove previus active class
       $(@element).find(".tab-item.active").removeClass 'active'
